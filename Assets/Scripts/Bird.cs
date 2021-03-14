@@ -6,8 +6,11 @@ public class Bird : MonoBehaviour
 {
     public float initialVelocity;
     public float jumpForce;
+    public float torqueZ;
+    public Vector2 torqueRange;
     private float velocity;
     private Rigidbody rb;
+
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +26,7 @@ public class Bird : MonoBehaviour
         {
             rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
             rb.AddForce(new Vector3(0, jumpForce, 0));
-            rb.AddTorque(new Vector3(Random.Range(-20, 20), Random.Range(-20, 20), Random.Range(-20, 20)));
+            rb.AddTorque(new Vector3(Random.Range(torqueRange.x, torqueRange.y), Random.Range(torqueRange.x, torqueRange.y), torqueZ));
         }
         rb.velocity = new Vector3(velocity, rb.velocity.y, rb.velocity.z);
     }
