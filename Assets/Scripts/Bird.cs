@@ -25,6 +25,7 @@ public class Bird : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            rb.isKinematic = false;
             rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
             rb.AddForce(new Vector3(0, jumpForce, 0));
             rb.AddTorque(new Vector3(Random.Range(torqueRange.x, torqueRange.y), Random.Range(torqueRange.x, torqueRange.y), torqueZ));
@@ -34,8 +35,8 @@ public class Bird : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        particleEffect.transform.position = transform.position;
-        particleEffect.transform.GetComponent<ParticleSystem>().Play();
+        GameObject deathEffect = Instantiate(particleEffect);
+        deathEffect.transform.position = transform.position;
         Destroy(gameObject);
     }
 }
