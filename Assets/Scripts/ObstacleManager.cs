@@ -1,0 +1,46 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ObstacleManager : MonoBehaviour
+{
+    public GameObject obstacle;
+    public Vector2 limitsOffsetY;
+    public float stepSize;
+    public int amountSoftLimit;
+    Transform playerTransform;
+
+    private void Start()
+    {
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        //transform.position -= new Vector3(-3 * (stepSize * (amountSoftLimit / 2)), 0, 0);
+        obstacle.GetComponent<Obstacle>().maxDistance = stepSize * amountSoftLimit;
+        for (int i = 0; i < (amountSoftLimit/2); i++)
+        {
+            PlaceObstacle();
+            Step();
+        }
+    }
+
+    private void Update()
+    {
+        if (playerTransform.position.x > transform.position.x)
+        {
+            PlaceObstacle();
+            Step();
+        }
+    }
+
+    private void PlaceObstacle()
+    {
+        obstacle.transform.position = new Vector3(transform.position.x + (stepSize * (amountSoftLimit/2)), transform.position.y, transform.position.z);
+        Instantiate(obstacle);
+    }
+
+    private void Step()
+    {
+        transform.position += new Vector3(stepSize, 0, 0);
+    }
+
+
+}
