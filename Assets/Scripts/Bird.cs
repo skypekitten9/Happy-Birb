@@ -8,9 +8,10 @@ public class Bird : MonoBehaviour
     public float jumpForce;
     public float torqueZ;
     public Vector2 torqueRange;
+    public GameObject particleEffect;
+
     private float velocity;
     private Rigidbody rb;
-
 
     // Start is called before the first frame update
     void Start()
@@ -29,5 +30,12 @@ public class Bird : MonoBehaviour
             rb.AddTorque(new Vector3(Random.Range(torqueRange.x, torqueRange.y), Random.Range(torqueRange.x, torqueRange.y), torqueZ));
         }
         rb.velocity = new Vector3(velocity, rb.velocity.y, rb.velocity.z);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        particleEffect.transform.position = transform.position;
+        particleEffect.transform.GetComponent<ParticleSystem>().Play();
+        Destroy(gameObject);
     }
 }
