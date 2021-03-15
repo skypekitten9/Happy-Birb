@@ -33,7 +33,7 @@ public class ObstacleManager : MonoBehaviour
 
     private void PlaceObstacle()
     {
-        obstacle.transform.position = new Vector3(transform.position.x + (stepSize * (amountSoftLimit/2)), transform.position.y, transform.position.z);
+        obstacle.transform.position = new Vector3(transform.position.x + (stepSize * (amountSoftLimit/2)), transform.position.y + Random.Range(limitsOffsetY.x, limitsOffsetY.y), transform.position.z);
         Instantiate(obstacle);
     }
 
