@@ -9,6 +9,7 @@ public class ObstacleManager : MonoBehaviour
     public float stepSize;
     public int amountSoftLimit;
     Transform playerTransform;
+    int score;
 
     private void Start()
     {
@@ -34,6 +35,8 @@ public class ObstacleManager : MonoBehaviour
 
     private void PlaceObstacle()
     {
+        score++;
+        obstacle.GetComponent<Obstacle>().DisplayScore(score);
         obstacle.transform.position = new Vector3(transform.position.x + (stepSize * (amountSoftLimit/2)), transform.position.y + Random.Range(limitsOffsetY.x, limitsOffsetY.y), transform.position.z);
         Instantiate(obstacle);
     }

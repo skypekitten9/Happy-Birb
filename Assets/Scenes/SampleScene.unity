@@ -715,7 +715,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacle: {fileID: 141619856201470909, guid: da31d897d953c7f48af3a1690f3f55d2, type: 3}
-  limitsOffsetY: {x: 5, y: -5}
+  limitsOffsetY: {x: 5, y: -4}
   stepSize: 10
   amountSoftLimit: 6
 --- !u!1 &963194225

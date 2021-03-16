@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Obstacle : MonoBehaviour
@@ -20,5 +21,10 @@ public class Obstacle : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public void DisplayScore(int x)
+    {
+        gameObject.GetComponentInChildren<TextMeshPro>().text = x.ToString();
     }
 }
