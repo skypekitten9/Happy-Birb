@@ -15,6 +15,7 @@ public class Obstacle : MonoBehaviour
 
     void Update()
     {
+        if (GameManager.Instance.GameOver) return;
         if (Vector3.Distance(transform.position, playerTransform.position) > maxDistance)
         {
             Destroy(gameObject);

@@ -14,6 +14,9 @@ public class FollowTarget : MonoBehaviour
 
     private void Update()
     {
-        transform.position = new Vector3(target.transform.position.x + offSet, transform.position.y, transform.position.z);
+        if (GameManager.Instance.GameOver == false)
+        {
+            transform.position = new Vector3(target.transform.position.x + offSet, transform.position.y, transform.position.z);
+        }
     }
 }

@@ -37,6 +37,7 @@ public class Bird : MonoBehaviour
     {
         GameObject deathEffect = Instantiate(particleEffect);
         deathEffect.transform.position = transform.position;
+        GameManager.Instance.EndGame();
         Destroy(gameObject);
     }
 }

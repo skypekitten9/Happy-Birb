@@ -24,6 +24,7 @@ public class ObstacleManager : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.Instance.GameOver) return;
         if (playerTransform.position.x > transform.position.x)
         {
             PlaceObstacle();
