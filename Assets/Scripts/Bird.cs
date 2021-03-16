@@ -41,6 +41,7 @@ public class Bird : MonoBehaviour
             rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
             rb.AddForce(new Vector3(0, jumpForce, 0));
             rb.AddTorque(new Vector3(Random.Range(torqueRange.x, torqueRange.y), Random.Range(torqueRange.x, torqueRange.y), torqueZ));
+            SFXManager.Instance.PlayJump();
         }
         rb.velocity = new Vector3(velocity, rb.velocity.y, rb.velocity.z);
     }
@@ -50,6 +51,7 @@ public class Bird : MonoBehaviour
         GameObject deathEffect = Instantiate(particleEffect);
         deathEffect.transform.position = transform.position;
         GameManager.Instance.EndGame();
+        SFXManager.Instance.PlayDeath();
         Destroy(gameObject);
     }
 }

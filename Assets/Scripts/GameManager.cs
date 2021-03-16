@@ -49,6 +49,7 @@ public class GameManager : MonoBehaviour
     public void IncreaseScore()
     {
         score++;
+        SFXManager.Instance.PlayScore();
         Debug.Log("Score increased to :" + score);
     }
 }
