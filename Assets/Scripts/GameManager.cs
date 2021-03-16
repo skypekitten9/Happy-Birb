@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public bool GameOver { get; private set; }
     public Color gameOverColor;
     public float deathTimer;
-    int score;
+    int score = 0;
 
     void Awake()
     {
@@ -30,16 +30,25 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+
+        //Reset your highscore
+        if(Input.GetKey(KeyCode.R) && Input.GetKeyDown(KeyCode.Return))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            PlayerPrefs.SetInt("Highscore", 0);
+        }
     }
 
     public void EndGame()
     {
         GameOver = true;
         Camera.main.backgroundColor = gameOverColor;
+        if (PlayerPrefs.GetInt("Highscore") < score) PlayerPrefs.SetInt("Highscore", score);
     }
 
     public void IncreaseScore()
     {
         score++;
+        Debug.Log("Score increased to :" + score);
     }
 }
