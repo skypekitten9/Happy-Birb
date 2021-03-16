@@ -12,8 +12,20 @@ public class Bird : MonoBehaviour
 
     private float velocity;
     private Rigidbody rb;
+    public static Bird Instance { get; private set; }
 
-    // Start is called before the first frame update
+    private void Awake()
+    {
+        if(Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
+
     void Start()
     {
         velocity = initialVelocity;

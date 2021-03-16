@@ -13,7 +13,7 @@ public class ObstacleManager : MonoBehaviour
 
     private void Start()
     {
-        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        playerTransform = Bird.Instance.transform;
         //transform.position -= new Vector3(-3 * (stepSize * (amountSoftLimit / 2)), 0, 0);
         obstacle.GetComponent<Obstacle>().maxDistance = stepSize * amountSoftLimit;
         for (int i = 0; i < (amountSoftLimit/2); i++)
