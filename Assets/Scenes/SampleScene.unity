@@ -783,14 +783,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpSounds:
-  - {fileID: 8300000, guid: cc1d532016b4f644a958ab681955766b, type: 3}
-  - {fileID: 8300000, guid: 76afd531204964640aa0bbe05b5399ae, type: 3}
-  - {fileID: 8300000, guid: b4dade7b5de39a844a4230fcefbc80c0, type: 3}
   - {fileID: 8300000, guid: 4213bcb64a884f940985db1f244e4193, type: 3}
   - {fileID: 8300000, guid: 9a80b1ba0f8359845a6f0fa0b0d63c45, type: 3}
   - {fileID: 8300000, guid: 335fb62f18b3df243a97f6ae78debb16, type: 3}
-  - {fileID: 8300000, guid: 73e2db549f25e1e48bfdacd322439c7a, type: 3}
-  - {fileID: 8300000, guid: 93e40ab858a220c4fa2f73c51334a714, type: 3}
   deathSounds:
   - {fileID: 8300000, guid: 1fe39deea0f758e48a58581e786e9038, type: 3}
   - {fileID: 8300000, guid: 26450fd941dde1046867ca5ad0e3db12, type: 3}

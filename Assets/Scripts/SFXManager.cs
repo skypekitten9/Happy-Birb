@@ -28,7 +28,7 @@ public class SFXManager : MonoBehaviour
     public void PlayJump()
     {
         AudioClip sound = jumpSounds[UnityEngine.Random.Range(0, jumpSounds.Length)];
-        audioSource.PlayOneShot(sound);
+        audioSource.PlayOneShot(sound, 0.5f);
     }
 
     public void PlayDeath()
